@@ -96,17 +96,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between', 
   },
   card: {
-    backgroundColor: '#fff',
-    borderRadius: 10,
+    backgroundColor: '#ffffff',
+    borderRadius: 7,
     padding: 10,
     marginBottom: 10,
     width: '48%',
     alignItems: 'center',
     elevation: 3, 
-   // shadowColor: '#000', 
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
+    shadowColor: '#000', 
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.5,
+    shadowRadius: 6,
   },
   image: {
     width: 120,
@@ -145,10 +145,11 @@ const styles = StyleSheet.create({
     width:40
   },
   buttonText: {
-    color: '#fff',
-    fontSize: 15,
-    fontWeight: 'bold',
-    padding:8
+    color: '#ffffff',
+    fontSize: 25,
+    fontWeight: '900',
+    padding:2,
+    marginLeft:12
   },
   quantity: {
     fontSize: 15,
