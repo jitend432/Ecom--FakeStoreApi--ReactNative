@@ -4,11 +4,11 @@ import Cart from "../Screens/Cart";
 import Profile from "../Screens/Profile";
 import Home from "../Screens/Home";
 
+const Tab = createBottomTabNavigator();
 
 
 function BottomTab() {
-    const Tab = createBottomTabNavigator();
-
+    
     return(
 
         <Tab.Navigator>

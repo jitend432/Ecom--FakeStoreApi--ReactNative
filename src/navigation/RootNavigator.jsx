@@ -8,6 +8,7 @@ function RootNavigator() {
 
 
     return(
+        
         <NavigationContainer>
            
         <BottomTab/>

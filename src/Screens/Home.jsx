@@ -1,11 +1,32 @@
-import React,{useState, useEffect} from 'react';
+import React,{useState, useEffect, useLayoutEffect} from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity,Image } from 'react-native';
 import { GetProducts } from '../Api/apiCalls';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
+import { addItem,removeItem } from '../Redux/cartSlice';
 
 function Home() {
 
   const [productData, setProductData] = useState([]);
-  const [cart, setCart] = useState({});
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
+  const cartCount = useSelector(state => state.cart.totalCount);
+
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+        headerRight: () => (
+            <TouchableOpacity 
+                onPress={() => navigation.navigate("Cart")} 
+                style={{ marginRight: 15, padding: 5 }}
+            >
+                <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+                    🛒 {cartCount > 0 ? `(${cartCount})` : ""}
+                </Text>
+            </TouchableOpacity>
+        ),
+    });
+}, [navigation, cartCount]);
 
 useEffect(()=>{
 
@@ -31,11 +52,11 @@ useEffect(()=>{
 
     <View style={styles.cartControls}>
         <TouchableOpacity style={styles.button}
-         onPress={() => handleRemoveFromCart(item.id)}>
+         onPress={() => dispatch(removeItem(item.id))}>
           <Text style={styles.buttonText}>-</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}
-         onPress={() => handleAddToCart(item)}>
+         onPress={() => dispatch(addItem(item.id))}>
           <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
       </View>
