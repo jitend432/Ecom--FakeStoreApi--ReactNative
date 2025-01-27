@@ -6,13 +6,11 @@ import BottomTab from "./BottomTab";
 
 function RootNavigator() {
 
-
     return(
         
         <NavigationContainer>
            
-        <BottomTab/>
-            
+                        <BottomTab/>     
 
         </NavigationContainer>
     )
