@@ -11,6 +11,7 @@ function Home() {
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const cartCount = useSelector(state => state.cart.totalCount);
+  
 
 
   useLayoutEffect(() => {
