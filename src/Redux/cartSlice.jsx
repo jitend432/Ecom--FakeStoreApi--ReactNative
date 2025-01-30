@@ -8,6 +8,7 @@ const initialState = {
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
+
   reducers: {
     addItem: (state, action) => {
       const productId = action.payload;
@@ -18,6 +19,7 @@ const cartSlice = createSlice({
       }
       state.totalCount += 1;
     },
+    
     removeItem: (state, action) => {
       const productId = action.payload;
       if (state.items[productId]) {

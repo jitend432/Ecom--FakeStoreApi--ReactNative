@@ -11,6 +11,7 @@ function Home() {
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const cartCount = useSelector(state => state.cart.totalCount);
+  const productCount = useSelector((state) => state.cart.items || 0);
   
 
 
@@ -56,6 +57,11 @@ useEffect(()=>{
          onPress={() => dispatch(removeItem(item.id))}>
           <Text style={styles.buttonText}>-</Text>
         </TouchableOpacity>
+        <View>
+          <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+                     {productCount > 0 ? `(${productCount})` : ""}
+          </Text>
+        </View>
         <TouchableOpacity style={styles.button}
          onPress={() => dispatch(addItem(item.id))}>
           <Text style={styles.buttonText}>+</Text>
