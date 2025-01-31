@@ -3,7 +3,7 @@ import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native
 import { useSelector, useDispatch } from 'react-redux';
 import { increaseCount, decreaseCount, removeItem } from './cartSlice';
 
-const CartScreen = () => {
+const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
   const cartArray = Object.values(cartItems); // Convert object to array
@@ -61,4 +61,4 @@ const styles = StyleSheet.create({
   removeButton: { backgroundColor: 'red', padding: 10, borderRadius: 5, marginTop: 10, alignItems: 'center' },
 });
 
-export default CartScreen;
+export default Cart;
