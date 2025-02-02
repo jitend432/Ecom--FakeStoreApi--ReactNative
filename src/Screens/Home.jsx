@@ -71,7 +71,6 @@ useEffect(()=>{
   </View>
 );
 
-
   return (
     <View style={styles.container}>
 
