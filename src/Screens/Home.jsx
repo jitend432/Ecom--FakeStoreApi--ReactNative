@@ -66,8 +66,7 @@ useEffect(()=>{
          onPress={() => dispatch(addItem(item.id))}>
           <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
-      </View>
-    
+      </View>    
   </View>
 );
 
