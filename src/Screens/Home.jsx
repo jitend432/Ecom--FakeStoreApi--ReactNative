@@ -30,6 +30,7 @@ function Home() {
     });
 }, [navigation, cartCount]);
 
+
 useEffect(()=>{
 
   GetProducts()
