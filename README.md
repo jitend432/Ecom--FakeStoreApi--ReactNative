@@ -88,6 +88,7 @@ If you're having issues getting the above steps to work, see the [Troubleshootin
 
 # Learn More
 
+
 To learn more about React Native, take a look at the following resources:
 
 - [React Native Website](https://reactnative.dev) - learn more about React Native.
