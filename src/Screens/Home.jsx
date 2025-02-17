@@ -14,7 +14,6 @@ function Home() {
   const productCount = useSelector((state) => state.cart.items || 0);
   
 
-
   useLayoutEffect(() => {
     navigation.setOptions({
         headerRight: () => (
